@@ -43,6 +43,4 @@ class TestTouchAction():
         action.perform()
         time.sleep(3)
 
-    def test_pass(self):
-        pass
-        pass
+
