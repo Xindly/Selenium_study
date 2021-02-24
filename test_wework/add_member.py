@@ -4,13 +4,17 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
 
+from test_wework.base_page import BasePage
 
-class AddMember():
-    def __init__(self, driver: WebDriver):
-        self.driver = driver
+
+class AddMember(BasePage):
 
     def add_member(self):
-        self.driver.find_element(By.CSS_SELECTOR, '#username').send_keys("测试一号")
-        self.driver.find_element(By.CSS_SELECTOR, "#memberAdd_acctid").send_keys("测试一号")
-        self.driver.find_element(By.CSS_SELECTOR, "#memberAdd_phone").send_keys("11111111111")
-        self.driver.find_element(By.CSS_SELECTOR, ".js_btn_save").click()
+        """
+        添加成员页面，实现成员添加
+        :return:
+        """
+        self.find(By.CSS_SELECTOR, '#username').send_keys("测试一号")
+        self.find(By.CSS_SELECTOR, "#memberAdd_acctid").send_keys("cesshiyihao")
+        self.find(By.CSS_SELECTOR, "#memberAdd_phone").send_keys("11111111111")
+        self.find(By.CSS_SELECTOR, ".js_btn_save").click()

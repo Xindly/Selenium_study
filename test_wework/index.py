@@ -7,24 +7,19 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
 from test_wework.add_member import AddMember
+from test_wework.base_page import BasePage
 
 
-class Index():
-    def __init__(self):
-        chrome_options = Options()
-        chrome_options.debugger_address = "127.0.0.1:9222"
-        self.driver = webdriver.Chrome(executable_path=r"E:\Driver\chrome_driver\chromedriver.exe",
-                                       options=chrome_options)
-        self.driver.get("https://work.weixin.qq.com/wework_admin/frame#index")
-        self.driver.implicitly_wait(5)
+class Index(BasePage):
+    _base_url = "https://work.weixin.qq.com/wework_admin/frame#index"
 
     def goto_add_member(self):
         """
         添加成员
         :return:
         """
-        self.driver.find_element(By.CSS_SELECTOR, ".index_service_cnt_itemWrap").click()
-        return AddMember(self.driver)
+        self.find(By.CSS_SELECTOR, ".index_service_cnt_itemWrap").click()
+        return AddMember(self._driver)
 
     def goto_import_address(self):
         """
