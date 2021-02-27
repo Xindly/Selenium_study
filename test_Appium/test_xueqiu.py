@@ -128,5 +128,5 @@ class TestXueqiu():
                                  'new UiScrollable(new UiSelector().scrollable(true).instance(0))'
                                  '.scrollIntoView(new UiSelector().text("1小时前").instance(0));').click()
 
-    def test_haemcrest(self):
-        assert_that(10, equal_to(101), "这是一个提示")
+    # def test_haemcrest(self):
+    #     assert_that(10, equal_to(101), "这是一个提示")
