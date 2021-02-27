@@ -129,4 +129,4 @@ class TestXueqiu():
                                  '.scrollIntoView(new UiSelector().text("1小时前").instance(0));').click()
 
     def test_haemcrest(self):
-        assert_that(10, equal_to(10), "这是一个提示")
+        assert_that(10, equal_to(101), "这是一个提示")
